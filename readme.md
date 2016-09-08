@@ -14,63 +14,25 @@ __Traducciones__
 __Tabla de Contenido__
 <!-- RM(noparent,notop) -->
 
-* [Arity](#arity)
-* [Higher-Order Functions (HOF)](#higher-order-functions-hof)
-* [Partial Application](#partial-application)
-* [Currying](#currying)
-* [Auto Currying](#auto-currying)
-* [Function Composition](#function-composition)
-* [Purity](#purity)
-* [Side effects](#side-effects)
-* [Idempotent](#idempotent)
-* [Point-Free Style](#point-free-style)
-* [Predicate](#predicate)
-* [Contracts](#contracts)
-* [Guarded Functions](#guarded-functions)
-* [Categories](#categories)
-* [Value](#value)
-* [Constant](#constant)
-* [Functor](#functor)
-* [Pointed Functor](#pointed-functor)
-* [Lift](#lift)
-* [Referential Transparency](#referential-transparency)
-* [Equational Reasoning](#equational-reasoning)
-* [Lambda](#lambda)
-* [Lambda Calculus](#lambda-calculus)
-* [Lazy evaluation](#lazy-evaluation)
-* [Monoid](#monoid)
-* [Monad](#monad)
-* [Comonad](#comonad)
-* [Applicative Functor](#applicative-functor)
-* [Morphism](#morphism)
-  * [Endomorphism](#endomorphism)
-  * [Isomorphism](#isomorphism)
-* [Setoid](#setoid)
-* [Semigroup](#semigroup)
-* [Foldable](#foldable)
-* [Traversable](#traversable)
-* [Type Signatures](#type-signatures)
-* [Union type](#union-type)
-* [Product type](#product-type)
-* [Option](#option)
-* [Functional Programming Libraries in JavaScript](#functional-programming-libraries-in-javascript)
+* [Aridad](#aridad)
 
 
 <!-- /RM -->
 
-## Arity
+## Aridad
 
-The number of arguments a function takes. From words like unary, binary, ternary, etc. This word has the distinction of being composed of two suffixes, "-ary" and "-ity." Addition, for example, takes two arguments, and so it is defined as a binary function or a function with an arity of two. Such a function may sometimes be called "dyadic" by people who prefer Greek roots to Latin. Likewise, a function that takes a variable number of arguments is called "variadic," whereas a binary function must be given two and only two arguments, currying and partial application notwithstanding (see below).
+El número de argumentos que acepta una función. Derivada de unaria, binaria, ternaria, etc… Esta palabra tiene la distinción de estar compuesta de dos sufijos, “-aria” y “-idad”. Por ejemplo, la suma, acepta dos argumentos, y por lo tanto se define como una función binaria o una función de aridad dos. De igual manera, una función que acepta un número variable de argumentos es llamada de aridad variable.
 
 ```js
-const sum = (a, b) => a + b
+const suma = (a, b) => a + b
 
-const arity = sum.length
-console.log(arity) // 2
+const aridad = sum.length
+console.log(aridad) // 2
 
-// The arity of sum is 2
+// La aridad de la suma es 2
 ```
 
+<!--
 ## Higher-Order Functions (HOF)
 
 A function which takes a function as an argument and/or returns a function.
@@ -763,7 +725,8 @@ getNestedPrice({item: {price: 9.99}}) // Some(9.99)
 * [Lazy.js](https://github.com/dtao/lazy.js)
 * [maryamyriameliamurphies.js](https://github.com/sjsyrek/maryamyriameliamurphies.js)
 * [Haskell in ES6](https://github.com/casualjavascript/haskell-in-es6)
+-->
 
 ---
 
-__P.S:__ This repo is successful due to the wonderful [contributions](https://github.com/hemanth/functional-programming-jargon/graphs/contributors)!
+__Nota:__ Este repositorio ha sido un éxito gracias a las [contribuciones de los colaboradores directos](https://github.com/rmariuzzo/jerga-programacion-funcional/graphs/contributors) e [indirectos](https://github.com/hemanth/functional-programming-jargon/graphs/contributors)!
