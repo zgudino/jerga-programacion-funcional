@@ -1,17 +1,17 @@
-# Functional Programming Jargon
+# Jerga de la Programación Funcional
 
-Functional programming (FP) provides many advantages, and its popularity has been increasing as a result. However, each programming paradigm comes with its own unique jargon and FP is no exception. By providing a glossary, we hope to make learning FP easier.
+La programación funcional ofrece muchas ventajas, de ahí el auge de su popularidad. Sin embargo, cada paradigma de programación trae consigo una jerga única, y la programación funcional no es la excepción. Al proveer un glosario, creemos que podemos ayudar a aprender programación funcional de una manera más fácil.
 
-Examples are presented in JavaScript (ES2015). [Why JavaScript?](https://github.com/hemanth/functional-programming-jargon/wiki/Why-JavaScript%3F)
+Los ejemplos presentados están escritos en JavaScript (ES2015). [Por qué JavaScript?](https://github.com/hemanth/functional-programming-jargon/wiki/Why-JavaScript%3F)
 
-*This is a [WIP](https://github.com/hemanth/functional-programming-jargon/issues/20); please feel free to send a PR ;)*
+_Este es un trabajo en progreso; siéntase libre en enviar PR._
 
-Where applicable, this document uses terms defined in the [Fantasy Land spec](https://github.com/fantasyland/fantasy-land)
+__Traducciones__
 
-__Translations__
-* [Portuguese](https://github.com/alexmoreno/jargoes-programacao-funcional)
+ * [Inglés](https://github.com/hemanth/functional-programming-jargon)
+ * [Portugués](https://github.com/alexmoreno/jargoes-programacao-funcional)
 
-__Table of Contents__
+__Tabla de Contenido__
 <!-- RM(noparent,notop) -->
 
 * [Arity](#arity)
