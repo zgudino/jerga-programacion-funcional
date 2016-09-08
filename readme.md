@@ -32,31 +32,31 @@ console.log(aridad) // 2
 // La aridad de la suma es 2
 ```
 
-<!--
-## Higher-Order Functions (HOF)
 
-A function which takes a function as an argument and/or returns a function.
+## Funciones de Orden Superior (FOS)
+
+Función que toma una función como argumento y/o retorna otra función.
 
 ```js
-const filter = (predicate, xs) => {
-  const result = []
+const filtro = (predicado, xs) => {
+  const resultado = []
   for (let idx = 0; idx < xs.length; idx++) {
-    if (predicate(xs[idx])) {
-      result.push(xs[idx])
+    if (predicado(xs[idx])) {
+      resultado.push(xs[idx])
     }
   }
-  return result
+  return resultado
 }
 ```
 
 ```js
-const is = (type) => (x) => Object(x) instanceof type
+const es = (tipo) => (x) => Object(x) instanceof tipo
 ```
 
 ```js
-filter(is(Number), [0, '1', 2, null]) // [0, 2]
+filtro(es(Number), [0, '1', 2, null]) // [0, 2]
 ```
-
+<!--
 ## Partial Application
 
 Partially applying a function means creating a new function by pre-filling some of the arguments to the original function.
