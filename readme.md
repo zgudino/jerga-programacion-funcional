@@ -26,7 +26,7 @@ El número de argumentos que acepta una función. Derivada de unaria, binaria, t
 ```js
 const suma = (a, b) => a + b
 
-const aridad = sum.length
+const aridad = suma.length
 console.log(aridad) // 2
 
 // La aridad de la suma es 2
