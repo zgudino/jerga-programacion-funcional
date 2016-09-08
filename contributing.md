@@ -11,6 +11,8 @@ Las traducciones se hacen a partir del [repo original](https://github.com/hemant
 
 Sin embargo, al traducir queremos utilizar un español internacional.
 
+ > 💁 **Importante** Las definiciones originales (en inglés) están incluidas en el documento en forma de comentario. A medida que traduzcas una definición al español, entonces la remueves.
+
 ## Reglas
 
  * Ejecuta `npm test` para hacer lint a los ejemplos de código. Tus cambios tiene que pasar.
