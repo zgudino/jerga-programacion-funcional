@@ -2,9 +2,19 @@
 
 Este proyecto es un trabajo en progreso. Las contribuciones son bienvenidas.
 
+## Traducción
+
+Las traducciones se hacen a partir del [repo original](https://github.com/hemanth/functional-programming-jargon). Los aportes de traducción pueden ser de diferentes maneras:
+
+ 1. Traducir los términos pendientes o nuevos.
+ 2. Corregir traducciones existentes.
+
+Sin embargo, al traducir queremos utilizar un español internacional.
+
 ## Reglas
 
  * Ejecuta `npm test` para hacer lint a los ejemplos de código. Tus cambios tiene que pasar.
+ * No tocar la **Tabla de Contenido** (esta es regenerada automáticamente desde las definiciones existentes).
  * Si agregas un nuevo término al glosario o cambias el orden entonces ejecuta `npm run toc` para así regenerar la tabla de contenido.
 
 Dicho esto, nos gustaría mantener un mínimo de consistencia a través del documento.
