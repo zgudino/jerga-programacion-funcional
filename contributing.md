@@ -1,29 +1,32 @@
-# Contributing
+# Contribuyendo
 
-This project is a work in progress. Contributions are very welcome.
+Este proyecto es un trabajo en progreso. Las contribuciones son bienvenidas.
 
-## Hard rules
-* Run `npm test` to lint the code examples. Your changes must pass.
-* If you add a new definition or reorder them run `npm run toc` to regenerate the table of contents.
+## Reglas
 
-That said, we'd like to maintain some consistency across the document.
+ * Ejecuta `npm test` para hacer lint a los ejemplos de código. Tus cambios tiene que pasar.
+ * Si agregas un nuevo término al glosario o cambias el orden entonces ejecuta `npm run toc` para así regenerar la tabla de contenido.
 
-## Style guide
-1. Every definition should include at least one JavaScript code example.
-1. Definitions should be written using the simplest language possible. Every word should tell.
-1. Target programmers that have no functional programming experience.
-1. We value understandability more than accuracy. e.g. It's okay to describe a functor as a container.
-1. Don't overuse jargon even if defined elsewhere in the document.
-1. Link to terms defined in the document when you use them in a definition.
-1. Avoid big walls of text
+Dicho esto, nos gustaría mantener un mínimo de consistencia a través del documento.
 
-## Code conventions
+## Guía de estilo
+
+ 1. Cada definición debe tener al menos un ejemplo de código en JavaScript (ES2015).
+ 2. Las definiciones deben ser escritas utilizando las palabras más sencillas.
+ 3. Piense en los programadores que no tienen experiencia en programación funcional.
+ 4. Apreciamos más lo entendible que lo preciso.
+ 5. No use mucho jerga en las definiciones aunque estén definidas en otras parte del documento.
+ 6. Si utilizas una jerga crea un enlace a su definición en el documento.
+ 7. Evita bloques masivos de textos 😱.
+
+## Convenciones de Código
+
 [![JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
-* Be consistent with other examples
-* Prefer arrow functions
-* Parenthesis around function arguments
-* Put output values in comments
-* Keep it short and simple
+ * Sé consistente con los demás ejemplos.
+ * Utilice “arrow functions”.
+ * Paréntesis siempre alrededor de los argumentos de funciones.
+ * Incluye el resultado de la ejecución en comentarios.
+ * KISS (Mantenlo corto y simple; _Keep it short and simple_)
 
-This styleguide is a WIP too! Send PRs :)
+Esta guía también es un trabajo en progreso. Sírvase en enviar PR!
