@@ -36,7 +36,7 @@ console.log(aridad) // 2
 
 ## Funciones de Orden Superior (FOS)
 
-Función que toma una función como argumento y/o retorna otra función.
+Función que acepta una función como argumento y/o retorna otra función.
 
 ```js
 const filtro = (predicado, xs) => {
