@@ -729,4 +729,4 @@ getNestedPrice({item: {price: 9.99}}) // Some(9.99)
 
 ---
 
-__Nota:__ Este repositorio ha sido un éxito gracias a las [contribuciones de los colaboradores directos](https://github.com/rmariuzzo/jerga-programacion-funcional/graphs/contributors) e [indirectos](https://github.com/hemanth/functional-programming-jargon/graphs/contributors)!
+__Nota:__ Este repositorio ha sido un éxito gracias a las [contribuciones de los colaboradores](https://github.com/rmariuzzo/jerga-programacion-funcional/graphs/contributors)!
