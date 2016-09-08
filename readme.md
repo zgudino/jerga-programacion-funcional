@@ -15,6 +15,7 @@ __Tabla de Contenido__
 <!-- RM(noparent,notop) -->
 
 * [Aridad](#aridad)
+* [Funciones de Orden Superior (FOS)](#funciones-de-orden-superior-fos)
 
 
 <!-- /RM -->
