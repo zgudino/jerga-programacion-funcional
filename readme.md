@@ -16,6 +16,7 @@ __Tabla de Contenido__
 
 * [Aridad](#aridad)
 * [Funciones de Orden Superior (FOS)](#funciones-de-orden-superior-fos)
+* [Aplicación Parcial](#aplicaci%C3%B3n-parcial)
 
 
 <!-- /RM -->
@@ -57,36 +58,37 @@ const es = (tipo) => (x) => Object(x) instanceof tipo
 ```js
 filtro(es(Number), [0, '1', 2, null]) // [0, 2]
 ```
+
+## Aplicación Parcial
+
+Aplicar parcialmente una función significa crear una nueva función al llamar la función original fijando algunos de sus argumentos.
+
+
+```js
+// Helper para crear funciones aplicadas parcialmente
+// Acepta una función y algunos argumentos
+const parcial = (f, ...args) =>
+  // retorna una función que acepta el resto de los argumentos
+  (...masArgs) =>
+    // y llama la función original con todos ellos
+    f(...args, ...masArgs)
+
+// Algo para aplicar
+const suma3 = (a, b, c) => a + b + c
+
+// Aplicar parcialmente `2` y `3` a `sumar3` retorna una función que acepta un argumento
+const cincoMas = parcial(suma3, 2, 3) // (c) => 2 + 3 + c
+
+cincoMas(4) // 9
+```
+
+También podemos utilizar `Function.prototype.bind` para aplicar parcialmente una función en JS:
+
+```js
+const suma1mas = suma3.bind(null, 2, 3) // (c) => 2 + 3 + c
+
+```
 <!--
-## Partial Application
-
-Partially applying a function means creating a new function by pre-filling some of the arguments to the original function.
-
-
-```js
-// Helper to create partially applied functions
-// Takes a function and some arguments
-const partial = (f, ...args) =>
-  // returns a function that takes the rest of the arguments
-  (...moreArgs) =>
-    // and calls the original function with all of them
-    f(...args, ...moreArgs)
-
-// Something to apply
-const add3 = (a, b, c) => a + b + c
-
-// Partially applying `2` and `3` to `add3` gives you a one-argument function
-const fivePlus = partial(add3, 2, 3) // (c) => 2 + 3 + c
-
-fivePlus(4) // 9
-```
-
-You can also use `Function.prototype.bind` to partially apply a function in JS:
-
-```js
-const add1More = add3.bind(null, 2, 3) // (c) => 2 + 3 + c
-```
-
 Partial application helps create simpler functions from more complex ones by baking in data when you have it. [Curried](#currying) functions are automatically partially applied.
 
 ## Currying

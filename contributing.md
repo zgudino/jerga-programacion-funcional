@@ -15,7 +15,7 @@ Sin embargo, al traducir queremos utilizar un español internacional.
 
 ## Reglas
 
- * Ejecuta `npm test` para hacer lint a los ejemplos de código. Tus cambios tiene que pasar.
+ * Ejecuta `npm test` para hacer lint a los ejemplos de código. Tus cambios tienen que pasar.
  * No tocar la **Tabla de Contenido** (esta es regenerada automáticamente desde las definiciones existentes).
  * Si agregas un nuevo término al glosario o cambias el orden entonces ejecuta `npm run toc` para así regenerar la tabla de contenido.
 
@@ -27,7 +27,7 @@ Dicho esto, nos gustaría mantener un mínimo de consistencia a través del docu
  2. Las definiciones deben ser escritas utilizando las palabras más sencillas.
  3. Piense en los programadores que no tienen experiencia en programación funcional.
  4. Apreciamos más lo entendible que lo preciso.
- 5. No use mucho jerga en las definiciones aunque estén definidas en otras parte del documento.
+ 5. No use mucha jerga en las definiciones aunque estén definidas en otras parte del documento.
  6. Si utilizas una jerga crea un enlace a su definición en el documento.
  7. Evita bloques masivos de textos 😱.
 
