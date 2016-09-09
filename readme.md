@@ -86,10 +86,12 @@ También podemos utilizar `Function.prototype.bind` para aplicar parcialmente un
 
 ```js
 const suma1mas = suma3.bind(null, 2, 3) // (c) => 2 + 3 + c
-
 ```
+
+La aplicación parcial permite crear funciones simples a partir de funciones complejas a medida que uno va obteniendo datos.
+
 <!--
-Partial application helps create simpler functions from more complex ones by baking in data when you have it. [Curried](#currying) functions are automatically partially applied.
+[Curried](#currying) functions are automatically partially applied.
 
 ## Currying
 
