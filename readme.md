@@ -19,6 +19,7 @@ __Tabla de Contenido__
 * [Aplicación Parcial](#aplicaci%C3%B3n-parcial)
 * [Currying](#currying)
 * [Auto Currying](#auto-currying)
+* [Composición de funciones](#composici%C3%B3n-de-funciones)
 
 
 <!-- /RM -->
@@ -113,7 +114,7 @@ suma2(10) // 12
 
 
 ## Auto Currying
-Significa transformar una función que acepta multiples argumentos en una que al recibir menos argumentos que el número total que acepta, retorna una funcion que acepta el resto de los argumentos. Cuando la función recibe el número correcto de argumentos, entonces es evaluada.
+Transformar una función que acepta multiples argumentos en una que al recibir menos argumentos que el número total que acepta, retorna una funcion que acepta el resto de los argumentos. Cuando la función recibe el número correcto de argumentos, entonces es evaluada.
 
 Underscore, lodash, y ramda tienen una función `curry` que funciona de esta manera.
 
@@ -130,17 +131,19 @@ __Lecturas Adicionales__
 * [Favoring Curry](http://fr.umio.us/favoring-curry/)
 * [Hey Underscore, You're Doing It Wrong!](https://www.youtube.com/watch?v=m3svKOdZijA)
 
-<!--
-## Function Composition
 
-The act of putting two functions together to form a third function where the output of one function is the input of the other.
+## Composición de funciones
+
+El acto de unir dos funciones para formar una tercera función donde la salida de una función es la entrada de la otra.
 
 ```js
-const compose = (f, g) => (a) => f(g(a)) // Definition
-const floorAndToString = compose((val) => val.toString(), Math.floor) // Usage
-floorAndToString(121.212121) // '121'
+const componer = (f, g) => (a) => f(g(a)) // Definición
+const floorYtoString = componer((val) => val.toString(), Math.floor) // Uso
+floorYtoString(121.212121) // '121'
+
 ```
 
+<!--
 ## Purity
 
 A function is pure if the return value is only determined by its
