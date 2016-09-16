@@ -112,9 +112,9 @@ suma2(10) // 12
 
 ```
 
-
 ## Auto Currying
-Transformar una función que acepta multiples argumentos en una que al recibir menos argumentos que el número total que acepta, retorna una funcion que acepta el resto de los argumentos. Cuando la función recibe el número correcto de argumentos, entonces es evaluada.
+
+Transformar una función que acepta múltiples argumentos en una que al recibir menos argumentos que el número total que acepta, retorna una función que acepta el resto de los argumentos. Cuando la función recibe el número correcto de argumentos, entonces es evaluada.
 
 Underscore, lodash, y ramda tienen una función `curry` que funciona de esta manera.
 
@@ -127,10 +127,10 @@ sumaCurried(1) // (y) => 1 + y
 sumaCurried(1)(2) // 3
 ```
 
-__Lecturas Adicionales__
-* [Favoring Curry](http://fr.umio.us/favoring-curry/)
-* [Hey Underscore, You're Doing It Wrong!](https://www.youtube.com/watch?v=m3svKOdZijA)
+__Lecturas Adicionales (en inglés)__
 
+ * [Favoring Curry](http://fr.umio.us/favoring-curry/)
+ * [Hey Underscore, You're Doing It Wrong!](https://www.youtube.com/watch?v=m3svKOdZijA)
 
 ## Composición de Funciones
 
@@ -140,7 +140,6 @@ El acto de unir dos funciones para formar una tercera función donde la salida d
 const componer = (f, g) => (a) => f(g(a)) // Definición
 const redondearYtoString = componer((val) => val.toString(), Math.floor) // Uso
 redondearYtoString(121.212121) // '121'
-
 ```
 
 <!--
