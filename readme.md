@@ -18,6 +18,7 @@ __Tabla de Contenido__
 * [Funciones de Orden Superior (FOS)](#funciones-de-orden-superior-fos)
 * [Aplicación Parcial](#aplicaci%C3%B3n-parcial)
 * [Currying](#currying)
+* [Auto Currying](#auto-currying)
 
 
 <!-- /RM -->
@@ -110,25 +111,26 @@ suma2(10) // 12
 
 ```
 
-<!--
-## Auto Currying
-Transforming a function that takes multiple arguments into one that if given less than its correct number of arguments returns a function that takes the rest. When the function gets the correct number of arguments it is then evaluated.
 
-Underscore, lodash, and ramda have a `curry` function that works this way.
+## Auto Currying
+Significa transformar una función que acepta multiples argumentos en una que al recibir menos argumentos que el número total que acepta, retorna una funcion que acepta el resto de los argumentos. Cuando la función recibe el número correcto de argumentos, entonces es evaluada.
+
+Underscore, lodash, y ramda tienen una función `curry` que funciona de esta manera.
 
 ```js
-const add = (x, y) => x + y
+const suma = (x, y) => x + y
 
-const curriedAdd = _.curry(add)
-curriedAdd(1, 2) // 3
-curriedAdd(1) // (y) => 1 + y
-curriedAdd(1)(2) // 3
+const sumaCurried = _.curry(suma)
+sumaCurried(1, 2) // 3
+sumaCurried(1) // (y) => 1 + y
+sumaCurried(1)(2) // 3
 ```
 
-__Further reading__
+__Lecturas Adicionales__
 * [Favoring Curry](http://fr.umio.us/favoring-curry/)
 * [Hey Underscore, You're Doing It Wrong!](https://www.youtube.com/watch?v=m3svKOdZijA)
 
+<!--
 ## Function Composition
 
 The act of putting two functions together to form a third function where the output of one function is the input of the other.
