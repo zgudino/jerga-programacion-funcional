@@ -90,28 +90,26 @@ const suma1mas = suma3.bind(null, 2, 3) // (c) => 2 + 3 + c
 
 La aplicación parcial permite crear funciones simples a partir de funciones complejas a medida que uno va obteniendo datos. La funciones [“currying”](#currying) son parcialmente aplicada de manera automática.
 
-<!--
-[Curried](#currying) functions are automatically partially applied.
-
 ## Currying
 
-The process of converting a function that takes multiple arguments into a function that takes them one at a time.
+Es el proceso de convertir una función que acepta múltiples argumentos a una función que acepta dichos argumentos uno a la vez.
 
-Each time the function is called it only accepts one argument and returns a function that takes one argument until all arguments are passed.
+Cada vez que la función es invocada solo acepta un solo argumento y retorna otra función que a su vez acepta un solo argumento hasta que todos los argumentos hayan sido pasados.
 
 ```js
-const sum = (a, b) => a + b
+const suma = (a, b) => a + b
 
-const curriedSum = (a) => (b) => a + b
+const sumaCurried = (a) => (b) => a + b
 
-curriedSum(40)(2) // 42.
+sumaCurried(40)(2) // 42.
 
-const add2 = curriedSum(2) // (b) => 2 + b
+const suma2 = sumaCurried(2) // (b) => 2 + b
 
-add2(10) // 12
+suma2(10) // 12
 
 ```
 
+<!--
 ## Auto Currying
 Transforming a function that takes multiple arguments into one that if given less than its correct number of arguments returns a function that takes the rest. When the function gets the correct number of arguments it is then evaluated.
 
