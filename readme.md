@@ -17,6 +17,7 @@ __Tabla de Contenido__
 * [Aridad](#aridad)
 * [Funciones de Orden Superior (FOS)](#funciones-de-orden-superior-fos)
 * [Aplicación Parcial](#aplicaci%C3%B3n-parcial)
+* [Currying](#currying)
 
 
 <!-- /RM -->
