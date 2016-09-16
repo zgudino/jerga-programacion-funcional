@@ -138,8 +138,8 @@ El acto de unir dos funciones para formar una tercera función donde la salida d
 
 ```js
 const componer = (f, g) => (a) => f(g(a)) // Definición
-const floorYtoString = componer((val) => val.toString(), Math.floor) // Uso
-floorYtoString(121.212121) // '121'
+const redondearYtoString = componer((val) => val.toString(), Math.floor) // Uso
+redondearYtoString(121.212121) // '121'
 
 ```
 
