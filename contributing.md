@@ -13,6 +13,12 @@ Sin embargo, al traducir queremos utilizar un español internacional.
 
  > 💁 **Importante** Las definiciones originales (en inglés) están incluidas en el documento en forma de comentario. A medida que traduzcas una definición al español, entonces la remueves.
 
+## Flujo de Trabajo
+
+ 1. Busca una traducción pendiente en la columna TODO: [ver traducciones pendientes](https://github.com/rmariuzzo/jerga-programacion-funcional/projects/3).
+ 2. Asegúrate que nadie esté trabajando en él (te puedes dar cuenta viendo que no haya nadie asignado ni nadie ha comentado que está trabajando).
+ 3. Sigue las reglas descritas abajo y crea tu PR.
+
 ## Reglas
 
  * Ejecuta `npm test` para hacer lint a los ejemplos de código. Tus cambios tienen que pasar.
