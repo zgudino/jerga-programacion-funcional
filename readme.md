@@ -19,7 +19,7 @@ __Tabla de Contenido__
 * [Aplicación Parcial](#aplicaci%C3%B3n-parcial)
 * [Currying](#currying)
 * [Auto Currying](#auto-currying)
-* [Composición de funciones](#composici%C3%B3n-de-funciones)
+* [Composición de Funciones](#composici%C3%B3n-de-funciones)
 
 
 <!-- /RM -->
@@ -132,7 +132,7 @@ __Lecturas Adicionales__
 * [Hey Underscore, You're Doing It Wrong!](https://www.youtube.com/watch?v=m3svKOdZijA)
 
 
-## Composición de funciones
+## Composición de Funciones
 
 El acto de unir dos funciones para formar una tercera función donde la salida de una función es la entrada de la otra.
 
