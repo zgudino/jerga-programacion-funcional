@@ -20,6 +20,7 @@ __Tabla de Contenido__
 * [Currying](#currying)
 * [Auto Currying](#auto-currying)
 * [Composición de Funciones](#composici%C3%B3n-de-funciones)
+* [Pureza](#pureza)
 
 
 <!-- /RM -->
@@ -142,33 +143,33 @@ const redondearYtoString = componer((val) => val.toString(), Math.floor) // Uso
 redondearYtoString(121.212121) // '121'
 ```
 
-<!--
-## Purity
 
-A function is pure if the return value is only determined by its
-input values, and does not produce side effects.
+## Pureza
+
+Una función es pura si el valor de retorno está solamente determinado por sus valores de entrada, y no produce efectos secundarios.
 
 ```js
-const greet = (name) => 'Hi, ' + name
+const saludar = (nombre) => 'Hola ' + nombre
 
-greet('Brianne') // 'Hi, Brianne'
+saludar('Amelie') // 'Hola Amelie'
 
 ```
 
-As opposed to:
+Contrario a:
 
 ```js
 
-let greeting
+let saludo
 
-const greet = () => {
-  greeting = 'Hi, ' + window.name
+const saludar = () => {
+  saludo = 'Hi, ' + window.name
 }
 
-greet() // "Hi, Brianne"
+saludar() // "Hola Amelie"
 
 ```
 
+<!--
 ## Side effects
 
 A function or expression is said to have a side effect if apart from returning a value, it interacts with (reads from or writes to) external mutable state.
