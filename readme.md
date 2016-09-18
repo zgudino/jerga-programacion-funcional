@@ -21,6 +21,7 @@ __Tabla de Contenido__
 * [Auto Currying](#auto-currying)
 * [Composición de Funciones](#composici%C3%B3n-de-funciones)
 * [Pureza](#pureza)
+* [Efectos secundarios](#efectos-secundarios)
 
 
 <!-- /RM -->
@@ -169,19 +170,19 @@ saludar() // "Hola Amelie"
 
 ```
 
+## Efectos secundarios
+
+Se dice que una función o expresión tiene efectos secundarios si aparte de retornar un valor, esta interactúa (lee o escribe) con algún estado mutable externo.
+
+```js
+const diferenteCadaVez = new Date()
+```
+
+```js
+console.log('E/S (entrada y salida) es un efecto secundario!')
+```
+
 <!--
-## Side effects
-
-A function or expression is said to have a side effect if apart from returning a value, it interacts with (reads from or writes to) external mutable state.
-
-```js
-const differentEveryTime = new Date()
-```
-
-```js
-console.log('IO is a side effect!')
-```
-
 ## Idempotent
 
 A function is idempotent if reapplying it to its result does not produce a different result.
