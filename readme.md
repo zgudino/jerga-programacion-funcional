@@ -164,7 +164,7 @@ Contrario a:
 let saludo
 
 const saludar = () => {
-  saludo = 'Hi, ' + window.name
+  saludo = 'Hola, ' + window.name
 }
 
 saludar() // "Hola Amelie"
