@@ -22,6 +22,7 @@ __Tabla de Contenido__
 * [Composición de Funciones](#composici%C3%B3n-de-funciones)
 * [Pureza](#pureza)
 * [Efectos secundarios](#efectos-secundarios)
+* [Idempotente](#idempotente)
 
 
 <!-- /RM -->
@@ -182,10 +183,9 @@ const diferenteCadaVez = new Date()
 console.log('E/S (entrada y salida) es un efecto secundario!')
 ```
 
-<!--
-## Idempotent
+## Idempotente
 
-A function is idempotent if reapplying it to its result does not produce a different result.
+Una función es idempotente cuando al ser invocada con su resultado no produce un resultado diferente.
 
 ```
 f(f(x)) ≍ f(x)
@@ -199,6 +199,7 @@ Math.abs(Math.abs(10))
 sort(sort(sort([2, 1])))
 ```
 
+<!--
 ## Point-Free Style
 
 Writing functions where the definition does not explicitly identify the arguments used. This style usually requires [currying](#currying) or other [Higher-Order functions](#higher-order-functions-hof). A.K.A Tacit programming.
