@@ -23,6 +23,7 @@ __Tabla de Contenido__
 * [Pureza](#pureza)
 * [Efectos secundarios](#efectos-secundarios)
 * [Idempotente](#idempotente)
+* [Estilo Point-Free](#estilo-point-free)
 
 
 <!-- /RM -->
@@ -199,29 +200,30 @@ Math.abs(Math.abs(10))
 sort(sort(sort([2, 1])))
 ```
 
-<!--
-## Point-Free Style
 
-Writing functions where the definition does not explicitly identify the arguments used. This style usually requires [currying](#currying) or other [Higher-Order functions](#higher-order-functions-hof). A.K.A Tacit programming.
+## Estilo Point-Free
+
+Escribir funciones donde su definición no  identifica explícitamente los argumentos usados. Este estilo usualmente requiere [currying](#currying) u otras [Funciones de Orden Superior (FOS)](#funciones-de-orden-superior-fos). También conocido como Programación Tácita.
 
 ```js
-// Given
-const map = (fn) => (list) => list.map(fn)
-const add = (a) => (b) => a + b
+// Dado
+const map = (fn) => (lista) => lista.map(fn)
+const suma = (a) => (b) => a + b
 
-// Then
+// Entonces
 
-// Not points-free - `numbers` is an explicit argument
-const incrementAll = (numbers) => map(add(1))(numbers)
+// No es points-free - `números` es un argumento explicito
+const incrementarTodos = (números) => map(suma(1))(números)
 
-// Points-free - The list is an implicit argument
-const incrementAll2 = map(add(1))
+// Es Points-free - la lista de números es un argumento implícito
+const incrementarTodos2 = map(suma(1))
 ```
 
-`incrementAll` identifies and uses the parameter `numbers`, so it is not points-free.  `incrementAll2` is written just by combining functions and values, making no mention of its arguments.  It __is__ points-free.
+`incrementarTodos` identifica y usa el parámetro `números`, por lo tanto no es points-free.  `incrementarTodos2` esta escrita mediante la simple combinación de funciones y valores, sin hacer mención de sus argumentos. Por lo tanto __es__ points-free.
 
-Points-free function definitions look just like normal assignments without `function` or `=>`.
+Las definiciones de funciones escritas utilizando el estilo Points-free se ven justo como las asignaciones normales sin la utilización de `function` o `=>`.
 
+<!--
 ## Predicate
 A predicate is a function that returns true or false for a given value. A common use of a predicate is as the callback for array filter.
 
