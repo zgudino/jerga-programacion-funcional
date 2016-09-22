@@ -219,9 +219,9 @@ const incrementarTodos = (números) => map(suma(1))(números)
 const incrementarTodos2 = map(suma(1))
 ```
 
-`incrementarTodos` identifica y usa el parámetro `números`, por lo tanto no es points-free.  `incrementarTodos2` esta escrita mediante la simple combinación de funciones y valores, sin hacer mención de sus argumentos. Por lo tanto __es__ points-free.
+`incrementarTodos` identifica y usa el parámetro `números`, por lo tanto no es point-free.  `incrementarTodos2` esta escrita mediante la simple combinación de funciones y valores, sin hacer mención de sus argumentos. Por lo tanto __es__ points-free.
 
-Las definiciones de funciones escritas utilizando el estilo Points-free se ven justo como las asignaciones normales sin la utilización de `function` o `=>`.
+Las definiciones de funciones escritas utilizando el estilo Point-free se ven justo como las asignaciones normales sin la utilización de `function` o `=>`.
 
 <!--
 ## Predicate
