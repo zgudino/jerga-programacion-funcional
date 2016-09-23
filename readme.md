@@ -26,9 +26,13 @@ __Tabla de Contenido__
 * [Estilo Point-Free](#estilo-point-free)
 * [Predicado](#predicado)
 * [Categorias](#categorias)
+<<<<<<< 3b4ae054313775a66bcb34b8112b4d06847276cb
 * [Funtor](#funtor)
 * [Lambda](#lambda)
 * [Cálculo lambda](#calculo-lambda)
+=======
+* [Valor](#valor)
+>>>>>>> Translating Valor
 
 
 <!-- /RM -->
@@ -252,19 +256,20 @@ TODO
 
 Objetos con funciones asociadas que siguen ciertas reglas. <!-- E.g. [Monoid](#monoid) -->
 
-<!--
-## Value
 
-Anything that can be assigned to a variable.
+## Valor
+
+Todo lo que puede ser asignado a una función.
 
 ```js
 5
-Object.freeze({name: 'John', age: 30}) // The `freeze` function enforces immutability.
+Object.freeze({nombre: 'John', edad: 30}) // La función `freeze` hace que el objeto sea inmutable.
 ;(a) => a
 ;[1]
 undefined
 ```
 
+<!--
 ## Constant
 
 A variable that cannot be reassigned once defined.
