@@ -24,6 +24,9 @@ __Tabla de Contenido__
 * [Efectos secundarios](#efectos-secundarios)
 * [Idempotente](#idempotente)
 * [Estilo Point-Free](#estilo-point-free)
+* [Funtor](#funtor)
+* [Lambda](#lambda)
+* [Cálculo lambda](#calculo-lambda)
 
 
 <!-- /RM -->
@@ -273,32 +276,32 @@ With the above two constants the following expression will always return `true`.
 ```js
 john.age + five === ({name: 'John', age: 30}).age + (5)
 ```
+-->
+## Funtor
 
-## Functor
-
-An object that implements a `map` function which, while running over each value in the object to produce a new object, adheres to two rules:
+Un objeto que implementa una function `map` la cual, mientras se ejecuta sobre cada valor del objeto para producir un nuevo objeto, se adhiere a dos reglas:
 
 ```js
-// preserves identity
+// conservar indentidad
 object.map(x => x) === object
 ```
 
 and
 
 ```js
-// composable
+// composición
 object.map(x => f(g(x))) === object.map(g).map(f)
 ```
 
-(`f`, `g` be arbitrary functions)
+(Sea `f`, `g` funciones arbritarias)
 
-A common functor in JavaScript is `Array` since it abides to the two functor rules:
+Un funtor muy comun en JavaScript es `Array` ya que cumple las dos reglas de funtor: 
 
 ```js
 [1, 2, 3].map(x => x) // = [1, 2, 3]
 ```
 
-and
+y
 
 ```js
 const f = x => x + 1
@@ -307,7 +310,7 @@ const g = x => x * 2
 ;[1, 2, 3].map(x => f(g(x))) // = [3, 5, 7]
 ;[1, 2, 3].map(g).map(f)     // = [3, 5, 7]
 ```
-
+<!--
 ## Pointed Functor
 An object with an `of` function that puts _any_ single value into it.
 
@@ -361,10 +364,10 @@ referentially transparent.
 ##  Equational Reasoning
 
 When an application is composed of expressions and devoid of side effects, truths about the system can be derived from the parts.
-
+-->
 ## Lambda
 
-An anonymous function that can be treated like a value.
+Una función anónima que puede tratarse como un valor.
 
 ```js
 ;(function (a) {
@@ -373,21 +376,23 @@ An anonymous function that can be treated like a value.
 
 ;(a) => a + 1
 ```
-Lambdas are often passed as arguments to Higher-Order functions.
+
+Lambdas a menudo se pasan como argumentos de funciones de Orden Superior.
 
 ```js
 [1, 2].map((a) => a + 1) // [2, 3]
 ```
 
-You can assign a lambda to a variable.
+Se puede asignar un lambda a una variables.
 
 ```js
 const add1 = (a) => a + 1
 ```
 
-## Lambda Calculus
-A branch of mathematics that uses functions to create a [universal model of computation](https://en.wikipedia.org/wiki/Lambda_calculus).
+## Cálculo lambda
 
+Una rama de las matemáticas que utiliza funcions para crear un [modelo universal de computación](https://es.wikipedia.org/wiki/Modelo_de_computaci%C3%B3n).
+<!--
 ## Lazy evaluation
 
 Lazy evaluation is a call-by-need evaluation mechanism that delays the evaluation of an expression until its value is needed. In functional languages, this allows for structures like infinite lists, which would not normally be available in an imperative language where the sequencing of commands is significant.
