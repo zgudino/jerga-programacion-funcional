@@ -253,7 +253,7 @@ TODO
 
 ## Categorias
 
-Objetos con funciones asociadas que siguen ciertas reglas. <!-- E.g. [Monoid](#monoid) -->
+Objetos con funciones asociadas que siguen ciertas reglas. 
 
 
 ## Valor
