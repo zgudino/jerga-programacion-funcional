@@ -25,6 +25,7 @@ __Tabla de Contenido__
 * [Idempotente](#idempotente)
 * [Estilo Point-Free](#estilo-point-free)
 * [Predicado](#predicado)
+* [Categorias](#categorias)
 * [Funtor](#funtor)
 * [Lambda](#lambda)
 * [Cálculo lambda](#calculo-lambda)
@@ -229,7 +230,7 @@ Las definiciones de funciones escritas utilizando el estilo Point-free se ven ju
 
 
 ## Predicado
-Un predicado es una función que retorna verdadero o falso para un valor dado. Un uso comun de un predicado es en el callback del metodo filter de un arreglo.
+Un predicado es una función que retorna verdadero o falso para un valor dado. Un uso común de un predicado es en el callback del método filter de un arreglo.
 
 ```js
 const predicado = (a) => a > 2
@@ -245,11 +246,13 @@ TODO
 ## Guarded Functions
 
 TODO
+-->
 
-## Categories
+## Categorias
 
-Objects with associated functions that adhere to certain rules. E.g. [Monoid](#monoid)
+Objetos con funciones asociadas que siguen ciertas reglas. <!-- E.g. [Monoid](#monoid) -->
 
+<!--
 ## Value
 
 Anything that can be assigned to a variable.
