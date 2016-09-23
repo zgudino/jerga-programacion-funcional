@@ -279,10 +279,10 @@ john.age + five === ({name: 'John', age: 30}).age + (5)
 -->
 ## Funtor
 
-Un objeto que implementa una function `map` la cual, mientras se ejecuta sobre cada valor del objeto para producir un nuevo objeto, se adhiere a dos reglas:
+Un objeto que implementa una función `map` la cual, mientras se ejecuta sobre cada valor del objeto para producir un nuevo objeto, se adhiere a dos reglas:
 
 ```js
-// conservar indentidad
+// preserva la identidad
 object.map(x => x) === object
 ```
 
@@ -295,7 +295,7 @@ object.map(x => f(g(x))) === object.map(g).map(f)
 
 (Sea `f`, `g` funciones arbritarias)
 
-Un funtor muy comun en JavaScript es `Array` ya que cumple las dos reglas de funtor: 
+Un funtor muy común en JavaScript es `Array` ya que cumple las dos reglas de funtor: 
 
 ```js
 [1, 2, 3].map(x => x) // = [1, 2, 3]
@@ -391,7 +391,7 @@ const add1 = (a) => a + 1
 
 ## Cálculo lambda
 
-Una rama de las matemáticas que utiliza funcions para crear un [modelo universal de computación](https://es.wikipedia.org/wiki/Modelo_de_computaci%C3%B3n).
+Una rama de las matemáticas que utiliza funciones para crear un [modelo universal de computación](https://es.wikipedia.org/wiki/Modelo_de_computaci%C3%B3n).
 <!--
 ## Lazy evaluation
 
