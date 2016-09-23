@@ -26,13 +26,12 @@ __Tabla de Contenido__
 * [Estilo Point-Free](#estilo-point-free)
 * [Predicado](#predicado)
 * [Categorias](#categorias)
-<<<<<<< 3b4ae054313775a66bcb34b8112b4d06847276cb
+* [Valor](#valor)
+* [Constante](#constante)
 * [Funtor](#funtor)
 * [Lambda](#lambda)
 * [Cálculo lambda](#calculo-lambda)
-=======
-* [Valor](#valor)
->>>>>>> Translating Valor
+
 
 
 <!-- /RM -->
@@ -269,27 +268,34 @@ Object.freeze({nombre: 'John', edad: 30}) // La función `freeze` hace que el ob
 undefined
 ```
 
-<!--
-## Constant
 
-A variable that cannot be reassigned once defined.
+## Constante
+
+Una variable que no puede ser reasignada una vez definida.
 
 ```js
-const five = 5
-const john = {name: 'John', age: 30}
+const cinco = 5
+const juan = {nombre: 'Juan', edad: 30}
 ```
 
-Constants are [referentially transparent](#referential-transparency). That is, they can be replaced with the values that they represent without affecting the result.
+Las constantes poseen transparencia referencial. Esto quiere decir que pueden ser reemplazadas por el valor que representan sin afectar el resultado.
 
-With the above two constants the following expression will always return `true`.
+Con las dos constantes de arriba la siguiente expresión siempre retornara `true`.
 
 ```js
-john.age + five === ({name: 'John', age: 30}).age + (5)
+juan.edad + cinco === ({name: 'Juan', edad: 30}).edad + (5)
 ```
 -->
 ## Funtor
 
+<<<<<<< 0d64008c4bb55303f150570850aa5f64c0d5667c
 Un objeto que implementa una función `map` la cual, mientras se ejecuta sobre cada valor del objeto para producir un nuevo objeto, se adhiere a dos reglas:
+=======
+<!--
+## Functor
+
+An object that implements a `map` function which, while running over each value in the object to produce a new object, adheres to two rules:
+>>>>>>> Translating Constante
 
 ```js
 // preserva la identidad
