@@ -24,6 +24,7 @@ __Tabla de Contenido__
 * [Efectos secundarios](#efectos-secundarios)
 * [Idempotente](#idempotente)
 * [Estilo Point-Free](#estilo-point-free)
+* [Predicado](#predicado)
 * [Funtor](#funtor)
 * [Lambda](#lambda)
 * [Cálculo lambda](#calculo-lambda)
@@ -226,16 +227,17 @@ const incrementarTodos2 = map(suma(1))
 
 Las definiciones de funciones escritas utilizando el estilo Point-free se ven justo como las asignaciones normales sin la utilización de `function` o `=>`.
 
-<!--
-## Predicate
-A predicate is a function that returns true or false for a given value. A common use of a predicate is as the callback for array filter.
+
+## Predicado
+Un predicado es una función que retorna verdadero o falso para un valor dado. Un uso comun de un predicado es en el callback del metodo filter de un arreglo.
 
 ```js
-const predicate = (a) => a > 2
+const predicado = (a) => a > 2
 
-;[1, 2, 3, 4].filter(predicate) // [3, 4]
+;[1, 2, 3, 4].filter(predicado) // [3, 4]
 ```
 
+<!--
 ## Contracts
 
 TODO
