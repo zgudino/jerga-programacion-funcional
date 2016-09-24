@@ -251,7 +251,7 @@ TODO
 TODO
 -->
 
-## Categorias
+## Categorías
 
 Objetos con funciones asociadas que siguen ciertas reglas. 
 
@@ -285,12 +285,11 @@ Con las dos constantes de arriba la siguiente expresión siempre retornara `true
 ```js
 juan.edad + cinco === ({name: 'Juan', edad: 30}).edad + (5)
 ```
--->
+
 ## Funtor
 
-<<<<<<< 0d64008c4bb55303f150570850aa5f64c0d5667c
 Un objeto que implementa una función `map` la cual, mientras se ejecuta sobre cada valor del objeto para producir un nuevo objeto, se adhiere a dos reglas:
-=======
+
 <!--
 ## Functor
 
