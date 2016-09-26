@@ -25,13 +25,31 @@ __Tabla de Contenido__
 * [Idempotente](#idempotente)
 * [Estilo Point-Free](#estilo-point-free)
 * [Predicado](#predicado)
-* [Categorias](#categorias)
+* [Contratos](#contratos)
+* [Guarded Functions](#guarded-functions)
+* [Categorías](#categor%C3%ADas)
 * [Valor](#valor)
 * [Constante](#constante)
 * [Funtor](#funtor)
 * [Lambda](#lambda)
-* [Cálculo lambda](#calculo-lambda)
-
+* [Cálculo lambda](#c%C3%A1lculo-lambda)
+* [Lazy evaluation](#lazy-evaluation)
+* [Monoid](#monoid)
+* [Monad](#monad)
+* [Comonad](#comonad)
+* [Applicative Functor](#applicative-functor)
+* [Morphism](#morphism)
+  * [Endomorphism](#endomorphism)
+  * [Isomorphism](#isomorphism)
+* [Setoid](#setoid)
+* [Semigroup](#semigroup)
+* [Foldable](#foldable)
+* [Traversable](#traversable)
+* [Type Signatures](#type-signatures)
+* [Union type](#union-type)
+* [Product type](#product-type)
+* [Option](#option)
+* [Functional Programming Libraries in JavaScript](#functional-programming-libraries-in-javascript)
 
 
 <!-- /RM -->
@@ -241,19 +259,17 @@ const predicado = (a) => a > 2
 ;[1, 2, 3, 4].filter(predicado) // [3, 4]
 ```
 
-<!--
-## Contracts
+## Contratos
 
-TODO
+Pendiente
 
 ## Guarded Functions
 
-TODO
--->
+Pendiente
 
 ## Categorías
 
-Objetos con funciones asociadas que siguen ciertas reglas. 
+Objetos con funciones asociadas que siguen ciertas reglas.
 
 
 ## Valor
@@ -310,7 +326,7 @@ object.map(x => f(g(x))) === object.map(g).map(f)
 
 (Sea `f`, `g` funciones arbritarias)
 
-Un funtor muy común en JavaScript es `Array` ya que cumple las dos reglas de funtor: 
+Un funtor muy común en JavaScript es `Array` ya que cumple las dos reglas de funtor:
 
 ```js
 [1, 2, 3].map(x => x) // = [1, 2, 3]
