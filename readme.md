@@ -33,24 +33,6 @@ __Tabla de Contenido__
 * [Funtor](#funtor)
 * [Lambda](#lambda)
 * [Cálculo lambda](#c%C3%A1lculo-lambda)
-* [Lazy evaluation](#lazy-evaluation)
-* [Monoid](#monoid)
-* [Monad](#monad)
-* [Comonad](#comonad)
-* [Applicative Functor](#applicative-functor)
-* [Morphism](#morphism)
-  * [Endomorphism](#endomorphism)
-  * [Isomorphism](#isomorphism)
-* [Setoid](#setoid)
-* [Semigroup](#semigroup)
-* [Foldable](#foldable)
-* [Traversable](#traversable)
-* [Type Signatures](#type-signatures)
-* [Union type](#union-type)
-* [Product type](#product-type)
-* [Option](#option)
-* [Functional Programming Libraries in JavaScript](#functional-programming-libraries-in-javascript)
-
 
 <!-- /RM -->
 
@@ -172,7 +154,6 @@ const redondearYtoString = componer((val) => val.toString(), Math.floor) // Uso
 redondearYtoString(121.212121) // '121'
 ```
 
-
 ## Pureza
 
 Una función es pura si el valor de retorno está solamente determinado por sus valores de entrada, y no produce efectos secundarios.
@@ -226,7 +207,6 @@ Math.abs(Math.abs(10))
 sort(sort(sort([2, 1])))
 ```
 
-
 ## Estilo Point-Free
 
 Escribir funciones donde su definición no  identifica explícitamente los argumentos usados. Este estilo usualmente requiere [currying](#currying) u otras [Funciones de Orden Superior (FOS)](#funciones-de-orden-superior-fos). También conocido como Programación Tácita.
@@ -251,6 +231,7 @@ Las definiciones de funciones escritas utilizando el estilo Point-free se ven ju
 
 
 ## Predicado
+
 Un predicado es una función que retorna verdadero o falso para un valor dado. Un uso común de un predicado es en el callback del método filter de un arreglo.
 
 ```js
@@ -396,6 +377,7 @@ referentially transparent.
 
 When an application is composed of expressions and devoid of side effects, truths about the system can be derived from the parts.
 -->
+
 ## Lambda
 
 Una función anónima que puede tratarse como un valor.
@@ -423,6 +405,7 @@ const add1 = (a) => a + 1
 ## Cálculo lambda
 
 Una rama de las matemáticas que utiliza funciones para crear un [modelo universal de computación](https://es.wikipedia.org/wiki/Modelo_de_computaci%C3%B3n).
+
 <!--
 ## Lazy evaluation
 
