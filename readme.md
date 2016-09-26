@@ -24,9 +24,14 @@ __Tabla de Contenido__
 * [Efectos secundarios](#efectos-secundarios)
 * [Idempotente](#idempotente)
 * [Estilo Point-Free](#estilo-point-free)
+* [Predicado](#predicado)
+* [Categorias](#categorias)
+* [Valor](#valor)
+* [Constante](#constante)
 * [Funtor](#funtor)
 * [Lambda](#lambda)
 * [Cálculo lambda](#calculo-lambda)
+
 
 
 <!-- /RM -->
@@ -226,16 +231,17 @@ const incrementarTodos2 = map(suma(1))
 
 Las definiciones de funciones escritas utilizando el estilo Point-free se ven justo como las asignaciones normales sin la utilización de `function` o `=>`.
 
-<!--
-## Predicate
-A predicate is a function that returns true or false for a given value. A common use of a predicate is as the callback for array filter.
+
+## Predicado
+Un predicado es una función que retorna verdadero o falso para un valor dado. Un uso común de un predicado es en el callback del método filter de un arreglo.
 
 ```js
-const predicate = (a) => a > 2
+const predicado = (a) => a > 2
 
-;[1, 2, 3, 4].filter(predicate) // [3, 4]
+;[1, 2, 3, 4].filter(predicado) // [3, 4]
 ```
 
+<!--
 ## Contracts
 
 TODO
@@ -243,43 +249,52 @@ TODO
 ## Guarded Functions
 
 TODO
+-->
 
-## Categories
+## Categorías
 
-Objects with associated functions that adhere to certain rules. E.g. [Monoid](#monoid)
+Objetos con funciones asociadas que siguen ciertas reglas. 
 
-## Value
 
-Anything that can be assigned to a variable.
+## Valor
+
+Todo lo que puede ser asignado a una función.
 
 ```js
 5
-Object.freeze({name: 'John', age: 30}) // The `freeze` function enforces immutability.
+Object.freeze({nombre: 'John', edad: 30}) // La función `freeze` hace que el objeto sea inmutable.
 ;(a) => a
 ;[1]
 undefined
 ```
 
-## Constant
 
-A variable that cannot be reassigned once defined.
+## Constante
 
-```js
-const five = 5
-const john = {name: 'John', age: 30}
-```
-
-Constants are [referentially transparent](#referential-transparency). That is, they can be replaced with the values that they represent without affecting the result.
-
-With the above two constants the following expression will always return `true`.
+Una variable que no puede ser reasignada una vez definida.
 
 ```js
-john.age + five === ({name: 'John', age: 30}).age + (5)
+const cinco = 5
+const juan = {nombre: 'Juan', edad: 30}
 ```
--->
+
+Las constantes poseen transparencia referencial. Esto quiere decir que pueden ser reemplazadas por el valor que representan sin afectar el resultado.
+
+Con las dos constantes de arriba la siguiente expresión siempre retornara `true`.
+
+```js
+juan.edad + cinco === ({name: 'Juan', edad: 30}).edad + (5)
+```
+
 ## Funtor
 
 Un objeto que implementa una función `map` la cual, mientras se ejecuta sobre cada valor del objeto para producir un nuevo objeto, se adhiere a dos reglas:
+
+<!--
+## Functor
+
+An object that implements a `map` function which, while running over each value in the object to produce a new object, adheres to two rules:
+>>>>>>> Translating Constante
 
 ```js
 // preserva la identidad
