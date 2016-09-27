@@ -34,6 +34,8 @@ __Tabla de Contenido__
 * [Transparencia referencial](#transparencia-referencial)
 * [Lambda](#lambda)
 * [Cálculo lambda](#c%C3%A1lculo-lambda)
+* [Mónada](#m%C3%B3nada)
+* [Comonad](#comonad)
 
 
 <!-- /RM -->
@@ -465,30 +467,29 @@ const compose = (f, g) => (x) => f(g(x))
 ```
 compose(foo, identity) ≍ compose(identity, foo) ≍ foo
 ```
+-->
+## Mónada
 
-## Monad
-
-A monad is an object with [`of`](#pointed-functor) and `chain` functions. `chain` is like [`map`](#functor) except it un-nests the resulting nested object.
+Una mónada es un objeto con funciones [`of`](#pointed-functor) y `chain`. `chain` es como [`map`](#funtor) excepto que desanida el objeto anidado resultante.
 
 ```js
-// Implementation
+// Implementación
 Array.prototype.chain = function (f) {
   return this.reduce((acc, it) => acc.concat(f(it)), [])
 }
 
-// Usage
+// Uso
 ;['cat,dog', 'fish,bird'].chain((a) => a.split(',')) // ['cat', 'dog', 'fish', 'bird']
 
-// Contrast to map
+// Contraste de map
 ;['cat,dog', 'fish,bird'].map((a) => a.split(',')) // [['cat', 'dog'], ['fish', 'bird']]
 ```
 
-`of` is also known as `return` in other functional languages.
-`chain` is also known as `flatmap` and `bind` in other languages.
+`of` también se conoce como `return` en otros lenguajes funcional. `chain` también se conoce como `flatmap` y `bind` en otros lenguajes funcional.
 
-## Comonad
+## Co-mónada
 
-An object that has `extract` and `extend` functions.
+Un objeto que tiene funciones `extract` y `extend`.
 
 ```js
 const CoIdentity = (v) => ({
@@ -502,18 +503,18 @@ const CoIdentity = (v) => ({
 })
 ```
 
-Extract takes a value out of a functor.
+`extract` toma un valor de un funtor.
 
 ```js
 CoIdentity(1).extract() // 1
 ```
 
-Extend runs a function on the comonad. The function should return the same type as the comonad.
+`extend` ejecuta una función en la co-mónada. La función debe devolver el mismo tipo que la co-mónada.
 
 ```js
 CoIdentity(1).extend((co) => co.extract() + 1) // CoIdentity(2)
 ```
-
+<!--
 ## Applicative Functor
 
 An applicative functor is an object with an `ap` function. `ap` applies a function in the object to a value in another object of the same type.
@@ -661,27 +662,27 @@ __Further reading__
 * [Ramda's type signatures](https://github.com/ramda/ramda/wiki/Type-Signatures)
 * [Mostly Adequate Guide](https://drboolean.gitbooks.io/mostly-adequate-guide/content/ch7.html#whats-your-type)
 * [What is Hindley-Milner?](http://stackoverflow.com/a/399392/22425) on Stack Overflow
+-->
+## Tipo de unión
 
-## Union type
-A union type is the combination of two types together into another one.
+Un tipo de unión es la combinación de dos tipos juntos en otro.
 
-JS doesn't have static types but let's say we invent a type `NumOrString` which is a sum of `String` and `Number`.
+JS no tiene tipos estáticos, pero digamos que inventamos un tipo `NumOrString` que es una suma de `String` y `Number`.
 
-The `+` operator in JS works on strings and numbers so we can use this new type to describe its inputs and outputs:
+El operador `+` en JS funciona en cadenas y números de modo que podemos utilizar este nuevo tipo para describir sus entradas y salidas:
 
 ```js
 // add :: (NumOrString, NumOrString) -> NumOrString
 const add = (a, b) => a + b
 
-add(1, 2) // Returns number 3
-add('Foo', 2) // Returns string "Foo2"
-add('Foo', 'Bar') // Returns string "FooBar"
+add(1, 2) // Devuelve numero 3
+add('Foo', 2) // Devuelve cadena "Foo2"
+add('Foo', 'Bar') // Devuelve cadena "FooBar"
 ```
+Tipos de unión también se conoce como tipos algebraicos, uniones etiquetadas, o tipos de suma.
 
-Union types are also known as algebraic types, tagged unions, or sum types.
-
-There's a [couple](https://github.com/paldepind/union-type) [libraries](https://github.com/puffnfresh/daggy) in JS which help with defining and using union types.
-
+Hay un [par](https://github.com/paldepind/union-type) de [bibliotecas](https://github.com/puffnfresh/daggy) en JS que ayuda con definir y uso de tipos de unión.
+<!--
 ## Product type
 
 A **product** type combines types together in a way you're probably more familiar with:
