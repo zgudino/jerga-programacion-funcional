@@ -287,18 +287,12 @@ juan.edad + cinco === ({name: 'Juan', edad: 30}).edad + (5)
 
 Un objeto que implementa una función `map` la cual, mientras se ejecuta sobre cada valor del objeto para producir un nuevo objeto, se adhiere a dos reglas:
 
-<!--
-## Functor
-
-An object that implements a `map` function which, while running over each value in the object to produce a new object, adheres to two rules:
->>>>>>> Translating Constante
-
 ```js
 // preserva la identidad
 object.map(x => x) === object
 ```
 
-and
+y
 
 ```js
 // composición
