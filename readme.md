@@ -31,8 +31,10 @@ __Tabla de Contenido__
 * [Valor](#valor)
 * [Constante](#constante)
 * [Funtor](#funtor)
+* [Transparencia referencial](#transparencia-referencial)
 * [Lambda](#lambda)
 * [Cálculo lambda](#c%C3%A1lculo-lambda)
+
 
 <!-- /RM -->
 
@@ -287,18 +289,12 @@ juan.edad + cinco === ({name: 'Juan', edad: 30}).edad + (5)
 
 Un objeto que implementa una función `map` la cual, mientras se ejecuta sobre cada valor del objeto para producir un nuevo objeto, se adhiere a dos reglas:
 
-<!--
-## Functor
-
-An object that implements a `map` function which, while running over each value in the object to produce a new object, adheres to two rules:
->>>>>>> Translating Constante
-
 ```js
 // preserva la identidad
 object.map(x => x) === object
 ```
 
-and
+y
 
 ```js
 // composición
@@ -357,22 +353,21 @@ const increment = (x) => x + 1
 lift(increment)([2]) // [3]
 ;[2].map(increment) // [3]
 ```
+-->
 
+## Transparencia referencial
 
-## Referential Transparency
+Una expresión que puede ser reemplazada por su valor sin alterar el comportamiento del programa se dice que es referencialmente transparente.
 
-An expression that can be replaced with its value without changing the
-behavior of the program is said to be referentially transparent.
-
-Say we have function greet:
+Digamos que tenemos la función saludar:
 
 ```js
-const greet = () => 'Hello World!'
+const saludar = () => 'Hola Mundo!'
 ```
 
-Any invocation of `greet()` can be replaced with `Hello World!` hence greet is
-referentially transparent.
+Cualquier invocación de `saludar()` puede ser reemplazada por `Hola Mundo!` , por lo tanto `saludar` es referencialmente transparente.
 
+<!--
 ##  Equational Reasoning
 
 When an application is composed of expressions and devoid of side effects, truths about the system can be derived from the parts.
