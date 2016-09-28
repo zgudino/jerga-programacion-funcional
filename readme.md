@@ -35,7 +35,8 @@ __Tabla de Contenido__
 * [Lambda](#lambda)
 * [Cálculo lambda](#c%C3%A1lculo-lambda)
 * [Mónada](#m%C3%B3nada)
-* [Comonad](#comonad)
+* [Co-mónada](#co-m%C3%B3nada)
+* [Tipo de unión](#tipo-de-uni%C3%B3n)
 
 
 <!-- /RM -->
@@ -682,6 +683,7 @@ add('Foo', 'Bar') // Devuelve cadena "FooBar"
 Tipos de unión también se conoce como tipos algebraicos, uniones etiquetadas, o tipos de suma.
 
 Hay un [par](https://github.com/paldepind/union-type) de [bibliotecas](https://github.com/puffnfresh/daggy) en JS que ayuda con definir y uso de tipos de unión.
+
 <!--
 ## Product type
 
