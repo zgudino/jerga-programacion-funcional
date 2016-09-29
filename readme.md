@@ -39,6 +39,8 @@ __Tabla de Contenido__
 * [Funtor aplicativo](#funtor-aplicativo)
 * [Semigrupo](#semigrupo)
 * [Tipo de unión](#tipo-de-uni%C3%B3n)
+* [Opción](#opci%C3%B3n)
+* [Librerías en JavaScript de programación funcional](#librer%C3%ADas-en-javascript-de-programaci%C3%B3n-funcional)
 
 
 <!-- /RM -->
@@ -701,26 +703,27 @@ const point = (x, y) => ({x: x, y: y})
 It's called a product because the total possible values of the data structure is the product of the different values.
 
 See also [Set theory](https://en.wikipedia.org/wiki/Set_theory).
+-->
 
-## Option
-Option is a [union type](#union-type) with two cases often called `Some` and `None`.
+## Opción
+Opción es un [tipo de unión](#tipo-de-uni%C3%B3n) con dos casos llamados `Alguno` y `Ninguno`.
 
-Option is useful for composing functions that might not return a value.
+Opción es útil para funciones compuestas que pueden no devolver un valor.
 
 ```js
-// Naive definition
+// Definición nativa
 
-const Some = (v) => ({
+const Alguno = (v) => ({
   val: v,
   map (f) {
-    return Some(f(this.val))
+    return Alguno(f(this.val))
   },
   chain (f) {
     return f(this.val)
   }
 })
 
-const None = () => ({
+const Ninguno = () => ({
   map (f) {
     return this
   },
@@ -729,29 +732,29 @@ const None = () => ({
   }
 })
 
-// maybeProp :: (String, {a}) -> Option a
-const maybeProp = (key, obj) => typeof obj[key] === 'undefined' ? None() : Some(obj[key])
+// maybeProp :: (String, {a}) -> Opción a
+const maybeProp = (key, obj) => typeof obj[key] === 'undefined' ? Ninguno() : Alguno(obj[key])
 ```
-Use `chain` to sequence functions that return `Option`s
+Use `chain` para secuenciar las funciones que devuelven `Opciones`
 ```js
 
-// getItem :: Cart -> Option CartItem
+// getItem :: Cart -> Opción CartItem
 const getItem = (cart) => maybeProp('item', cart)
 
-// getPrice :: Item -> Option Number
+// getPrice :: Item -> Opción Number
 const getPrice = (item) => maybeProp('price', item)
 
-// getNestedPrice :: cart -> Option a
+// getNestedPrice :: cart -> Opción a
 const getNestedPrice = (cart) => getItem(obj).chain(getPrice)
 
-getNestedPrice({}) // None()
-getNestedPrice({item: {foo: 1}}) // None()
-getNestedPrice({item: {price: 9.99}}) // Some(9.99)
+getNestedPrice({}) // Ninguno()
+getNestedPrice({item: {foo: 1}}) // Ninguno()
+getNestedPrice({item: {price: 9.99}}) // Alguno(9.99)
 ```
 
-`Option` is also known as `Maybe`. `Some` is sometimes called `Just`. `None` is sometimes called `Nothing`.
+`Opción` es también conocido como `Talvez`. `Alguno` es también llamado `Sólo`. `Ninguno` a veces es llamado 'Nada'.
 
-## Functional Programming Libraries in JavaScript
+## Librerías en JavaScript de programación funcional
 
 * [Ramda](https://github.com/ramda/ramda)
 * [Folktale](http://folktalejs.org)
@@ -760,7 +763,6 @@ getNestedPrice({item: {price: 9.99}}) // Some(9.99)
 * [Lazy.js](https://github.com/dtao/lazy.js)
 * [maryamyriameliamurphies.js](https://github.com/sjsyrek/maryamyriameliamurphies.js)
 * [Haskell in ES6](https://github.com/casualjavascript/haskell-in-es6)
--->
 
 ---
 
