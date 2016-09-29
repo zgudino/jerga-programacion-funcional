@@ -38,6 +38,7 @@ __Tabla de Contenido__
 * [Co-mónada](#co-m%C3%B3nada)
 * [Tipo de unión](#tipo-de-uni%C3%B3n)
 * [Opción](#opci%C3%B3n)
+* [Librerías en JavaScript de programación funcional](#librer%C3%ADas-en-javascript-de-programaci%C3%B3n-funcional)
 
 
 <!-- /RM -->
@@ -748,8 +749,7 @@ getNestedPrice({item: {price: 9.99}}) // Alguno(9.99)
 
 `Opción` es también conocido como `Talvez`. `Alguno` es también llamado `Sólo`. `Ninguno` a veces es llamado 'Nada'.
 
-<!--
-## Functional Programming Libraries in JavaScript
+## Librerías en JavaScript de programación funcional
 
 * [Ramda](https://github.com/ramda/ramda)
 * [Folktale](http://folktalejs.org)
@@ -758,7 +758,6 @@ getNestedPrice({item: {price: 9.99}}) // Alguno(9.99)
 * [Lazy.js](https://github.com/dtao/lazy.js)
 * [maryamyriameliamurphies.js](https://github.com/sjsyrek/maryamyriameliamurphies.js)
 * [Haskell in ES6](https://github.com/casualjavascript/haskell-in-es6)
--->
 
 ---
 
