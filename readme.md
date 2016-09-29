@@ -36,6 +36,8 @@ __Tabla de Contenido__
 * [Cálculo lambda](#c%C3%A1lculo-lambda)
 * [Mónada](#m%C3%B3nada)
 * [Co-mónada](#co-m%C3%B3nada)
+* [Funtor aplicativo](#funtor-aplicativo)
+* [Semigrupo](#semigrupo)
 * [Tipo de unión](#tipo-de-uni%C3%B3n)
 
 
@@ -515,43 +517,44 @@ CoIdentity(1).extract() // 1
 ```js
 CoIdentity(1).extend((co) => co.extract() + 1) // CoIdentity(2)
 ```
-<!--
-## Applicative Functor
 
-An applicative functor is an object with an `ap` function. `ap` applies a function in the object to a value in another object of the same type.
+## Funtor aplicativo
+
+Un funtor aplicativo es un objeto con una función `ap`. `ap` aplica una función en el objeto a un valor en otro objeto del mismo tipo.
 
 ```js
-// Implementation
+// Implementación
 Array.prototype.ap = function (xs) {
   return this.reduce((acc, f) => acc.concat(xs.map(f)), [])
 }
 
-// Example usage
+// Ejemplo de uso
 ;[(a) => a + 1].ap([1]) // [2]
 ```
 
-This is useful if you have two objects and you want to apply a binary function to their contents.
+Esto es útil si se tiene dos objetos y se quiere aplicar una función binaria a sus contenidos.
 
 ```js
-// Arrays that you want to combine
+// Arreglos que se quieren combinar
 const arg1 = [1, 3]
 const arg2 = [4, 5]
 
-// combining function - must be curried for this to work
-const add = (x) => (y) => x + y
+// función de combinación - debe ser currificada para que funcione
+const suma = (x) => (y) => x + y
 
-const partiallyAppliedAdds = [add].ap(arg1) // [(y) => 1 + y, (y) => 3 + y]
+const sumasParcialmenteAplicadas = [suma].ap(arg1) // [(y) => 1 + y, (y) => 3 + y]
 ```
-
-This gives you an array of functions that you can call `ap` on to get the result:
+Esto nos da un arreglo de funciones sobre el cual se puede llamar `ap` para obtener el resultado:
 
 ```js
-partiallyAppliedAdds.ap(arg2) // [5, 6, 7, 8]
+sumasParcialmenteAplicadas.ap(arg2) // [5, 6, 7, 8]
 ```
 
+<!--
 ## Morphism
 
 A transformation function.
+
 
 ### Endomorphism
 
@@ -607,15 +610,17 @@ Array.prototype.equals = (arr) => {
 ;[1, 2].equals([1, 2]) // true
 ;[1, 2].equals([0]) // false
 ```
+-->
 
-## Semigroup
+## Semigrupo
 
-An object that has a `concat` function that combines it with another object of the same type.
+Un objeto que posee una función `concat` que lo combina con otro objeto del mismo tipo.
 
 ```js
 ;[1].concat([2]) // [1, 2]
 ```
 
+<!--
 ## Foldable
 
 An object that has a `reduce` function that can transform that object into some other type.
