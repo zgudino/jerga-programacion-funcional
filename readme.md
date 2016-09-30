@@ -32,8 +32,10 @@ __Tabla de Contenido__
 * [Constante](#constante)
 * [Funtor](#funtor)
 * [Transparencia referencial](#transparencia-referencial)
+* [Razonamiento Ecuacional](#razonamiento-ecuacional)
 * [Lambda](#lambda)
 * [Cálculo lambda](#c%C3%A1lculo-lambda)
+* [Monoide](#monoide)
 * [Mónada](#m%C3%B3nada)
 * [Co-mónada](#co-m%C3%B3nada)
 * [Funtor aplicativo](#funtor-aplicativo)
@@ -374,11 +376,11 @@ const saludar = () => 'Hola Mundo!'
 
 Cualquier invocación de `saludar()` puede ser reemplazada por `Hola Mundo!` , por lo tanto `saludar` es referencialmente transparente.
 
-<!--
-##  Equational Reasoning
 
-When an application is composed of expressions and devoid of side effects, truths about the system can be derived from the parts.
--->
+##  Razonamiento Ecuacional
+
+Cuando una aplicación esta compuesta de expresiones y es libre de efectos secundarios, verdades acerca del sistema pueden ser derivadas a partir de sus partes.
+
 
 ## Lambda
 
@@ -425,54 +427,57 @@ const rand = function*() {
 const randIter = rand()
 randIter.next() // Each execution gives a random value, expression is evaluated on need.
 ```
+-->
 
-## Monoid
+## Monoide
 
-An object with a function that "combines" that object with another of the same type.
+Un objeto con una función que "combina" ese objeto con otro del mismo tipo.
 
-One simple monoid is the addition of numbers:
+Un monoide simple es la suma de números:
 
 ```js
 1 + 1 // 2
 ```
-In this case number is the object and `+` is the function.
 
-An "identity" value must also exist that when combined with a value doesn't change it.
+En este caso el número es el objeto y `+` es la función.
 
-The identity value for addition is `0`.
+Un valor "identidad" también debe existir, el cual al combinarse con un valor no lo cambia.
+
+El valor identidad de la suma es `0`.
+
 ```js
 1 + 0 // 1
 ```
 
-It's also required that the grouping of operations will not affect the result (associativity):
+También se requiere que el agrupamiento de operaciones no afecte el resultado (asociatividad):
 
 ```js
-1 + (2 + 3) === (1 + 2) + 3 // true
+1 + (2 + 3) === (1 + 2) + 3 // verdadero
 ```
 
-Array concatenation also forms a monoid:
+La concatenación de arreglos también forma un monoide.
 
 ```js
 ;[1, 2].concat([3, 4]) // [1, 2, 3, 4]
 ```
 
-The identity value is empty array `[]`
+El valor identidad es un arreglo vacío `[]`
 
 ```js
 ;[1, 2].concat([]) // [1, 2]
 ```
 
-If identity and compose functions are provided, functions themselves form a monoid:
+Si las funciones de identidad y composición son provistas, las funciones en si forman un monoide: 
 
 ```js
-const identity = (a) => a
-const compose = (f, g) => (x) => f(g(x))
+const identidad = (a) => a
+const componer = (f, g) => (x) => f(g(x))
 ```
-`foo` is any function that takes one argument.
+`foo` es cualquier función que acepte un argumento.
 ```
-compose(foo, identity) ≍ compose(identity, foo) ≍ foo
+componer(foo, identidad) ≍ componer(identidad, foo) ≍ foo
 ```
--->
+
 ## Mónada
 
 Una mónada es un objeto con funciones [`of`](#pointed-functor) y `chain`. `chain` es como [`map`](#funtor) excepto que desanida el objeto anidado resultante.
