@@ -35,12 +35,15 @@ __Tabla de Contenido__
 * [Razonamiento Ecuacional](#razonamiento-ecuacional)
 * [Lambda](#lambda)
 * [Cálculo lambda](#c%C3%A1lculo-lambda)
+* [Evaluación perezosa](#evaluaci%C3%B3n-perezosa)
 * [Monoide](#monoide)
 * [Mónada](#m%C3%B3nada)
 * [Co-mónada](#co-m%C3%B3nada)
 * [Funtor aplicativo](#funtor-aplicativo)
 * [Semigrupo](#semigrupo)
+* [Firma de tipo](#firma-de-tipo)
 * [Tipo de unión](#tipo-de-uni%C3%B3n)
+* [Producto de tipo](#producto-de-tipo)
 * [Opción](#opci%C3%B3n)
 * [Librerías en JavaScript de programación funcional](#librer%C3%ADas-en-javascript-de-programaci%C3%B3n-funcional)
 
@@ -410,10 +413,9 @@ const add1 = (a) => a + 1
 
 Una rama de las matemáticas que utiliza funciones para crear un [modelo universal de computación](https://es.wikipedia.org/wiki/Modelo_de_computaci%C3%B3n).
 
-<!--
-## Lazy evaluation
+## Evaluación perezosa
 
-Lazy evaluation is a call-by-need evaluation mechanism that delays the evaluation of an expression until its value is needed. In functional languages, this allows for structures like infinite lists, which would not normally be available in an imperative language where the sequencing of commands is significant.
+La evaluación perezosa es un mecanismo de evaluación llamada por necesidad que retrasa la evaluación de una expresión hasta que su valor sea necesario. En lenguajes funcional, esto permite estructuras de datos como listas infinitas, que normalmente no estarían disponibles en un lenguaje imperativo donde la secuencia de comandos es significativa.
 
 ```js
 const rand = function*() {
@@ -425,9 +427,8 @@ const rand = function*() {
 
 ```js
 const randIter = rand()
-randIter.next() // Each execution gives a random value, expression is evaluated on need.
+randIter.next() // Cada ejecución da un valor aleatorio, la expresión se evalúa en necesidad.
 ```
--->
 
 ## Monoide
 
@@ -467,7 +468,7 @@ El valor identidad es un arreglo vacío `[]`
 ;[1, 2].concat([]) // [1, 2]
 ```
 
-Si las funciones de identidad y composición son provistas, las funciones en si forman un monoide: 
+Si las funciones de identidad y composición son provistas, las funciones en si forman un monoide:
 
 ```js
 const identidad = (a) => a
@@ -640,12 +641,12 @@ sum([1, 2, 3]) // 6
 ## Traversable
 
 TODO
+-->
+## Firma de tipo
 
-## Type Signatures
+A menudo, las funciones en JavaScript incluirán comentarios que indican los tipos de sus argumentos y valores de retorno.
 
-Often functions in JavaScript will include comments that indicate the types of their arguments and return values.
-
-There's quite a bit of variance across the community but they often follow the following patterns:
+Hay un poco de variación en la comunidad, pero a menudo siguen los siguientes patrones:
 
 ```js
 // functionName :: firstArgType -> secondArgType -> returnType
@@ -657,25 +658,25 @@ const add = (x) => (y) => x + y
 const increment = (x) => x + 1
 ```
 
-If a function accepts another function as an argument it is wrapped in parentheses.
+Si la función acepta otra función como argumento, se encierra en parentesis.
 
 ```js
 // call :: (a -> b) -> a -> b
 const call = (f) => (x) => f(x)
 ```
 
-The letters `a`, `b`, `c`, `d` are used to signify that the argument can be of any type. The following version of `map` takes a function that transforms a value of some type `a` into another type `b`, an array of values of type `a`, and returns an array of values of type `b`.
+Las letras `a`, `b`, `c`, `d` se utilizan para indicar que el argumento puede ser de cualquier tipo. La siguiente versión de `map` toma una función que transforma un valor de algún tipo `a` en otro tipo `b`, un arreglo de valores de tipo `a`, y devuelve un arreglo de valores de tipo `b`.
 
 ```js
 // map :: (a -> b) -> [a] -> [b]
 const map = (f) => (list) => list.map(f)
 ```
 
-__Further reading__
+__Lectura adicional__
 * [Ramda's type signatures](https://github.com/ramda/ramda/wiki/Type-Signatures)
 * [Mostly Adequate Guide](https://drboolean.gitbooks.io/mostly-adequate-guide/content/ch7.html#whats-your-type)
 * [What is Hindley-Milner?](http://stackoverflow.com/a/399392/22425) on Stack Overflow
--->
+
 ## Tipo de unión
 
 Un tipo de unión es la combinación de dos tipos juntos en otro.
@@ -696,19 +697,17 @@ Tipos de unión también se conoce como tipos algebraicos, uniones etiquetadas, 
 
 Hay un [par](https://github.com/paldepind/union-type) de [bibliotecas](https://github.com/puffnfresh/daggy) en JS que ayuda con definir y uso de tipos de unión.
 
-<!--
-## Product type
+## Producto de tipo
 
-A **product** type combines types together in a way you're probably more familiar with:
+Un **producto** de tipo combina los tipos de datos de una manera que probablemente usted este más familiarizado:
 
 ```js
 // point :: (Number, Number) -> {x: Number, y: Number}
 const point = (x, y) => ({x: x, y: y})
 ```
-It's called a product because the total possible values of the data structure is the product of the different values.
+Se llama un producto porque el total de los valores posibles de la estructura de datos es el producto de los diferente valores.
 
-See also [Set theory](https://en.wikipedia.org/wiki/Set_theory).
--->
+Ver también [Teoría de conjuntos](https://es.wikipedia.org/wiki/Teor%C3%ADa_de_conjuntos).
 
 ## Opción
 Opción es un [tipo de unión](#tipo-de-uni%C3%B3n) con dos casos llamados `Alguno` y `Ninguno`.
