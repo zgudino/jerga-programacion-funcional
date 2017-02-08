@@ -31,6 +31,7 @@ __Tabla de Contenido__
 * [Valor](#valor)
 * [Constante](#constante)
 * [Funtor](#funtor)
+* [Pointed Funtor](#pointed-funtor)
 * [Transparencia referencial](#transparencia-referencial)
 * [Razonamiento Ecuacional](#razonamiento-ecuacional)
 * [Lambda](#lambda)
@@ -330,16 +331,17 @@ const g = x => x * 2
 ;[1, 2, 3].map(x => f(g(x))) // = [3, 5, 7]
 ;[1, 2, 3].map(g).map(f)     // = [3, 5, 7]
 ```
-<!--
-## Pointed Functor
-An object with an `of` function that puts _any_ single value into it.
+## Pointed Funtor
 
-ES2015 adds `Array.of` making arrays a pointed functor.
+Un objeto con una función `of` que acepta cualquier valor y lo pone dentro.
+
+ES2015 introduce `Array.of` haciendo que los arreglos sean “pointed funtor”.
 
 ```js
 Array.of(1) // [1]
 ```
 
+<!--
 ## Lift
 
 Lifting is when you take a value and put it into an object like a [functor](#pointed-functor). If you lift a function into an [Applicative Functor](#applicative-functor) then you can make it work on values that are also in that functor.
